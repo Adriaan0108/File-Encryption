@@ -1,14 +1,5 @@
-PROJECT TITLE: File Encryption
+# Background
+Encryption or cryptography is the science of obscuring/ modifying information in order to hide the contents thereof to anyone who is not supposed to see it. Encryption has been around in some form or another for a very long time. The use thereof can be linked to early variations of the Egyptian, Roman and Greek militaries. The earliest form of encryption was the substitution cipher. This encryption method entails swopping letters or groups of letters with other letters or groups of letters. The key would be used by the person encrypting and person decrypting in order to determine the substitutions and therefore the hidden message. Encryption took a great leap forward during World War 2 when the Enigma machine was invented by Arthur Scherbius. The Enigma machine was used by the Germans to send secret messages that could not be interpreted by the enemy. The invention of the world wide web was responsible for making encryption more mainstream. More and more sensitive data were being moved into computer storage and the need for the protection of that data grew exponentially. Modern encryption methods use RSA (public- and private key) to encrypt information. Encryption plays a very big part in the world in the 21st century. Secure websites use encryption in order to ensure that web traffic is secure. Emails and instant messaging services such as WhatsApp rely on encryption in order to provide secure communication services. Due to the sensitive nature of information kept at banks and financial institutions, encryption plays an essential role in almost all operations. As has been the case throughout history, encryption plays an increasingly important role in militaries around the world. With the deployment of more and more computerized systems such as armed drones, cyber security has become a top priority. The strongest encryption that is available today is AES (Advanced Encryption Standard) 256 (Tresorit Team, 2022). 
 
-VERSION or DATE: 10/05/2022
-
-AUTHORS: Ivan Potgieter
-
-USER INSTRUCTIONS:
-
-To encrypt:
-Select the file you wish to encrypt from the "Browse" button. Once the file is selected, enter a strong password. Once the password has been entered, click the "Save encrypted file" button. Enter a name for the file and select the desired location to save it.
-
-
-To decrypt:
-Select the file you wish to decrypt from the "Browse" button. Once the file is selected, enter the correct password (decryption key). Once the password has been entered, click the "Save decrypted file" button. Enter a name for the file and select the desired location to save it.
+# Code explained
+![image](https://github.com/IvanPotgieter01/File-Encryption/assets/109952133/36452596-e751-4a3e-9bb2-04bcf9dbf199)
