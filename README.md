@@ -8,7 +8,7 @@ Decrypting a file follows a similar format to encrypting a file. The user first 
 
 
 ![image](https://github.com/IvanPotgieter01/File-Encryption/assets/109952133/38542cd0-343b-425e-b3a3-e518cfa99886)
-using System.IO for creating and deleting files. 
+<br>using System.IO for creating and deleting files. 
 using System.Security.Cryptography for encoding and decoding data.
 
 
