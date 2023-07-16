@@ -25,7 +25,7 @@ The AES_Decrypt() method is declared (the parameters are the bytes to be decrypt
 
 
 ![image](https://github.com/IvanPotgieter01/File-Encryption/assets/109952133/dc3aabd1-eb16-4d08-bba0-52b2a5b1ede4)
-The doNotEncrypt variable is declared to ensure that encryption will only take place under the right circumstances (a file is selected and a password is filled in). File. Exists is used in order to ensure that the file to be encrypted is still located at the location where it was selected under “Browse”. String.IsNullOrEmpty is used in order to ensure that the password that the user entered in the textbox is not empty. If both of these conditions are met, the EncryptFile() method is executed.
+The doNotEncrypt variable is declared to ensure that encryption will only take place under the right circumstances (a file is selected and a password is filled in). File.Exists is used in order to ensure that the file to be encrypted is still located at the location where it was selected under “Browse”. String.IsNullOrEmpty is used in order to ensure that the password that the user entered in the textbox is not empty. If both of these conditions are met, the EncryptFile() method is executed.
 
 
 ![image](https://github.com/IvanPotgieter01/File-Encryption/assets/109952133/92c59f28-7621-4bf5-a726-a33025dda43a)
@@ -40,7 +40,6 @@ The EncryptFile() method is declared. An empty password string is declared and t
 The DecryptFile() method is declared. An empty password string is declared and then initialized to the password that the user provided in the textbox. The content of the file is read into the bytes to be decrypted array. The characters are then decoded using the password. SHA256 is used in order to compute the hash password. The AES_Decrypt method is called and given the bytesToBeDecrypted and the passwordBytes as parameters. Path.GetExtention is used in order to get the extension of the file as this will be added to the decrypted file again. A save file dialogue box appears to give the user the option to choose the name and save location of the decrypted file. The decrypted file is then saved to the desired location using File.WriteAllBytes. 
 
 
-
 ![image](https://github.com/IvanPotgieter01/File-Encryption/assets/109952133/f25181d0-55b6-42f0-a1d2-4926ca7b4eec)
 Opening a file dialogue box for the user to select the file to be encrypted. The file path of the file is obtained in order to be used when the encrypted file is saved.
 
@@ -49,14 +48,14 @@ Opening a file dialogue box for the user to select the file to be encrypted. The
 Opening a file dialogue box for the user to select the file to be decrypted. The file path of the file is obtained in order to be used when the decrypted file is saved.
 
  
- # What Rijndael encryption is 
+ # What is Rijndael encryption?
 Rijndael encryption was invented by Joan Daemen and Vincent Rijmen. Rijndael is classified as an AES (Advanced Encryption Standard) algorithm. Rijndael supports key sizes of 128- (9 matrix transformations), 192- (11 matrix transformations), and 256- (13 matrix transformations) bits and handles data in 128-bit blocks. A matrix transformation contains the following four steps:
 1.	Sub Bytes: Each byte contained in the block is replaced by a substitution byte.
 2.	Shift Rows: Bytes are contained in a block and are shifted using block sizes as a reference.
 3.	Mix Columns: Each column is multiplied by the matrix using matrix multiplication.
 4.	Add Round Key: A subkey is combined with the state. A different sub-key is used for each matrix transformation.
 During the early 2000’s the then-defector standard encryption algorithm, DES (Data Encryption Standard), had started showing some deficiencies, especially in terms of brute force attacks. NIST (the National Institute of Standards and Technology) evaluated several encryption algorithms in order to replace DES and Rijndael as AES was ultimately selected). 
-DES uses 56-bit keys while Rijndael uses 128-bit keys. This means 1 021 times more AES 128-bit keys than DES 56-bit keys. The more times Rijndael is performed with different keys, the more challenging the encryption becomes to break. With my encryption program, I set the key size to 256 for maximum security 
+DES uses 56-bit keys while Rijndael uses 128-bit keys. This means 1 021 times more AES 128-bit keys than DES 56-bit keys. The more times Rijndael is performed with different keys, the more challenging the encryption becomes to break. With my encryption program, I set the key size to 256 for maximum security.
 ![image](https://github.com/IvanPotgieter01/File-Encryption/assets/109952133/23cfc060-8cc2-4f87-89e3-763c999b8e68)
 
 ## Advantages of Rijndael encryption:
