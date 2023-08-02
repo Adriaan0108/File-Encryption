@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Security.Cryptography;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace File_Encryption
 {
@@ -86,13 +87,7 @@ namespace File_Encryption
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-            OpenFileDialog od = new OpenFileDialog();
-            od.Multiselect = false; //Disallows multiple file selections
-            if (od.ShowDialog() == DialogResult.OK)
-            {
-                tbPath.Text = od.FileName; //Obtaining filepath for hidden textbox
-                fileOrigional = od.FileName; //File to be encrypt set as file selected
-            }
+            BrowseFileEncrypt();
         }
 
         private void btnEncrypt_Click(object sender, EventArgs e)
@@ -128,13 +123,7 @@ namespace File_Encryption
 
         private void btnBrowseDecrypt_Click(object sender, EventArgs e)
         {
-            OpenFileDialog od = new OpenFileDialog();
-            od.Multiselect = false;
-            if (od.ShowDialog() == DialogResult.OK) //File to be decrypt set as file selected
-            {
-                fileEncrypted = od.FileName;
-                tbFilePathDecrypt.Text = od.FileName;  //Obtaining filepath for hidden textbox
-            }
+            BrowseFileDecrypt();
         }
 
         private void btnDecrypt_Click(object sender, EventArgs e)
@@ -207,6 +196,71 @@ namespace File_Encryption
                 File.WriteAllBytes(sd.FileName, bytesDecrypted); //Saving decrypted file to selected location
             }
         }
-        
+
+        private void BrowseFileEncrypt()
+        {
+            OpenFileDialog od = new OpenFileDialog();
+            od.Multiselect = false; //Disallows multiple file selections
+            if (od.ShowDialog() == DialogResult.OK)
+            {
+                tbPath.Text = od.FileName; //Obtaining filepath for hidden textbox
+                fileOrigional = od.FileName; //File to be encrypt set as file selected
+            }
+        }
+
+        private void BrowseFileDecrypt()
+        {
+            OpenFileDialog od = new OpenFileDialog();
+            od.Multiselect = false;
+            if (od.ShowDialog() == DialogResult.OK) //File to be decrypt set as file selected
+            {
+                fileEncrypted = od.FileName;
+                tbFilePathDecrypt.Text = od.FileName;  //Obtaining filepath for hidden textbox
+            }
+        }
+
+        private void btnBrowse_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] filePaths;
+            filePaths = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            OpenFileDialog od = new OpenFileDialog();
+            od.FileName = filePaths[0];
+            tbPath.Text = od.FileName;
+            fileOrigional = od.FileName;
+        }
+
+        private void btnBrowseDecrypt_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] filePaths;
+            filePaths = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            OpenFileDialog od = new OpenFileDialog();
+            od.FileName = filePaths[0];
+            fileEncrypted = od.FileName;
+            tbFilePathDecrypt.Text = od.FileName;
+        }
+
+        private void btnBrowse_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void btnBrowseDecrypt_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
     }
 }

@@ -103,6 +103,7 @@
             // 
             // btnBrowseDecrypt
             // 
+            this.btnBrowseDecrypt.AllowDrop = true;
             this.btnBrowseDecrypt.BackColor = System.Drawing.SystemColors.Window;
             this.btnBrowseDecrypt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBrowseDecrypt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -113,6 +114,8 @@
             this.btnBrowseDecrypt.Text = "Browse";
             this.btnBrowseDecrypt.UseVisualStyleBackColor = false;
             this.btnBrowseDecrypt.Click += new System.EventHandler(this.btnBrowseDecrypt_Click);
+            this.btnBrowseDecrypt.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnBrowseDecrypt_DragDrop);
+            this.btnBrowseDecrypt.DragEnter += new System.Windows.Forms.DragEventHandler(this.btnBrowseDecrypt_DragEnter);
             // 
             // tbFilePathDecrypt
             // 
@@ -157,6 +160,7 @@
             // 
             // btnBrowse
             // 
+            this.btnBrowse.AllowDrop = true;
             this.btnBrowse.BackColor = System.Drawing.SystemColors.Window;
             this.btnBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -167,6 +171,8 @@
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = false;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            this.btnBrowse.DragDrop += new System.Windows.Forms.DragEventHandler(this.btnBrowse_DragDrop);
+            this.btnBrowse.DragEnter += new System.Windows.Forms.DragEventHandler(this.btnBrowse_DragEnter);
             // 
             // tbPath
             // 
